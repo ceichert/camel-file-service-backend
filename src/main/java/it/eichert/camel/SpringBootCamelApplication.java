@@ -1,13 +1,13 @@
-package it.eichert.camel.fileservicebackend;
+package it.eichert.camel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CamelFileServiceBackendApplication {
+public class SpringBootCamelApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CamelFileServiceBackendApplication.class, args);
+        SpringApplication.run(SpringBootCamelApplication.class, args);
     }
 
 }

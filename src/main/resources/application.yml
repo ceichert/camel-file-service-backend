@@ -1,0 +1,21 @@
+integration:
+  file-integration:
+    route-id: "generic file integration"
+    from:
+      uri: "${integration.file-integration.from.scheme}:${integration.file-integration.from.authority}/${integration.file-integration.from.path}?${integration.file-integration.from.query}"
+      scheme: "sftp"
+      authority: "localhost:22"
+      path: "camel-file-reader-history"
+      query: "username=tester&password=password&idempotent=true"
+#      query: "username=tester&password=password&doneFileName=$simple{file:name}.ok"
+    to:
+      uri: "${integration.file-integration.to.scheme}:${integration.file-integration.to.authority}/${integration.file-integration.to.path}?${integration.file-integration.to.query}"
+      scheme: "mock"
+      authority: "authority"
+      path: "path"
+      query: "query"
+
+spring:
+  web:
+    resources:
+      static-locations: "classpath:static/camel-file-service-frontend/"
