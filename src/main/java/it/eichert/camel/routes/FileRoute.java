@@ -78,7 +78,7 @@ public class FileRoute extends RouteBuilder implements ApplicationContextAware {
                     }
                 })
                 .filter(header(CUSTOM_META_REMOTE_FILE_PATH).isNotNull())
-                .log("fetching ${header." + CUSTOM_META_REMOTE_FILE_PATH + "} from sftp")
+                .log("fetching ${header." + CUSTOM_META_REMOTE_FILE_NAME + "} from sftp")
                 .pollEnrich()
                 .simple("sftp:localhost:22/${header." + CUSTOM_META_REMOTE_FILE_PATH + "}?username=tester&password=password&noop=true&idempotent=false&fileName=${header." + CUSTOM_META_REMOTE_FILE_NAME + "}")
                 .end();
