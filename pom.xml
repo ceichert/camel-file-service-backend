@@ -16,23 +16,20 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>11</java.version>
-        <camel.version>3.10.0</camel.version>
+        <java.version>18</java.version>
+        <camel.version>3.14.5</camel.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- Camel BOM -->
             <dependency>
                 <groupId>org.apache.camel.springboot</groupId>
-                <artifactId>camel-spring-boot-bom</artifactId>
+                <artifactId>camel-spring-boot-dependencies</artifactId>
                 <version>${camel.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- ... other BOMs or dependencies ... -->
         </dependencies>
-
     </dependencyManagement>
 
     <dependencies>
@@ -93,7 +90,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>1.18.24</version>
         </dependency>
 
         <dependency>
